@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Days available:</b>
+  <%= @user.days_available %>
+</p>
+
+<p>
+  <b>Requested date:</b>
+  <%= @user.start_date %>
+  |
+  <%= @user.end_date %>
+</p>
+
+<p>
+  <b>Days charged:</b>
+  <%= @user.days_charged %>
+</p>
+
+<p>
+  <b>Days remaining:</b>
+  <%= @user.days_remaining %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

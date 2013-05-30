@@ -1,0 +1,48 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :days_available %><br />
+    <%= f.select :days_available, (1..10)  %> 
+  </div>
+  <div class="field">
+    <%= f.label :requested_dates %><br />
+    <%= f.date_select :start_date %>
+    |
+    <%= f.date_select :end_date %>
+  </div>
+   <div class="field">
+    <%= f.label :days_charged %><br />
+    <%= f.select :days_charged, (0..10) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :days_remaining %><br />
+    <%= f.number_field :days_available %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
